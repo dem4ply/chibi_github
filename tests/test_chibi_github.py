@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import unittest
 from vcr_unittest import VCRTestCase
 
 from chibi_github import Github_api

@@ -1,4 +1,4 @@
-from marshmallow import Schema, post_load, INCLUDE, fields
+from marshmallow import Schema, INCLUDE, fields
 
 
 class Github_url( fields.Url ):

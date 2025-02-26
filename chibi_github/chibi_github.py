@@ -1,11 +1,9 @@
-from chibi_github.config import configuration
 from chibi_api import Chibi_api
 from chibi_api.chibi_api import Chibi_inner_api
 from chibi_requests.auth import Token
-from chibi_requests import Response
-from chibi_requests import Response
-from chibi_api.chibi_api import Chibi_inner_api
+
 from .response import Create, Delete, Get
+from chibi_github.config import configuration
 
 
 class Github_api_inner( Chibi_inner_api ):
