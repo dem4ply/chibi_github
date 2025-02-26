@@ -8,6 +8,7 @@ base_url = Chibi_url(
 
 base_url += Token( token=configuration.github.personal_token )
 
+issues = base_url + 'issues'
 
 repo_pull = base_url + 'repos/{username}/{repo}/pulls'
 

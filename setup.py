@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ 'chibi-requests>=0.6.0' ]
+requirements = [ 'chibi_api>=0.1.0' ]
 
 setup(
     author="dem4ply",

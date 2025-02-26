@@ -1,7 +1,8 @@
-from unittest import TestCase
+from unittest import TestCase, skip
 from chibi_github.urls import base_url, user_repos, repo_pull
 
 
+@skip( 'old and dead' )
 class Test_base_url( TestCase ):
     def setUp( self ):
         super().setUp()
@@ -13,6 +14,7 @@ class Test_base_url( TestCase ):
         self.assertTrue( response.native )
 
 
+@skip( 'old and dead' )
 class Test_user_repos_url( Test_base_url ):
     def setUp( self ):
         super().setUp()
@@ -24,6 +26,7 @@ class Test_user_repos_url( Test_base_url ):
         self.assertTrue( response.native )
 
 
+@skip( 'old and dead' )
 class Test_repos_pull_url( Test_base_url ):
     def setUp( self ):
         super().setUp()

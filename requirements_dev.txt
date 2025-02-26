@@ -9,3 +9,5 @@ pycodestyle
 jedi
 pipdeptree
 rope
+ropevim
+vcrpy-unittest
