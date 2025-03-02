@@ -1,6 +1,6 @@
 from chibi_api import Chibi_api
 from chibi_api.chibi_api import Chibi_inner_api
-from chibi_requests.auth import Token
+from chibi_requests.auth import Bearer
 
 from .response import Create, Delete, Get
 from chibi_github.config import configuration
@@ -21,9 +21,9 @@ class Github_api( Chibi_api ):
 
     def login( self, token=None ):
         if token is None:
-            token = Token( token=configuration.github.personal_token )
+            token = Bearer( token=configuration.github.personal_token )
         else:
-            token = Token( token=token )
+            token = Bearer( token=token )
         self.API.auth = token
 
     @property

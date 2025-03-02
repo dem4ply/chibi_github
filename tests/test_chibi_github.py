@@ -4,6 +4,7 @@ from vcr_unittest import VCRTestCase
 
 from chibi_github import Github_api
 from chibi_github.chibi_github import Github_api_inner
+from chibi_requests.auth import Bearer
 
 
 class Test_chibi_github( VCRTestCase ):
@@ -14,6 +15,13 @@ class Test_chibi_github( VCRTestCase ):
         api = Github_api()
         api.login()
         self.assertTrue( api )
+
+    def test_should_wort( self ):
+        api = Github_api()
+        self.assertIsNone( api.API.auth )
+        api.login()
+        self.assertIsNotNone( api.API.auth )
+        self.assertIsInstance( api.API.auth, Bearer )
 
     def test_me_should_return_user_data( self ):
         api = Github_api()
