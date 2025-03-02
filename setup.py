@@ -38,6 +38,6 @@ setup(
     name='chibi_github',
     packages=find_packages(include=['chibi_github', 'chibi_github.*']),
     url='https://github.com/dem4ply/chibi_github',
-    version='0.1.1',
+    version='0.1.2',
     zip_safe=False,
 )
