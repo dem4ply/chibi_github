@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from vcr_unittest import VCRTestCase
+from requests.exceptions import HTTPError
 
 from chibi_github import Github_api
 from chibi_github.chibi_github import Github_api_inner
+from chibi_github.exception import Error_bad_token
 from chibi_requests.auth import Bearer
+from chibi_requests import status_code
 
 
 class Test_chibi_github( VCRTestCase ):
@@ -61,6 +64,12 @@ class Test_chibi_github_login( VCRTestCase ):
         return message
 
 
+class Test_chibi_github_expired_token( Test_chibi_github_login ):
+    def test_me_should_return_expired_token( self ):
+        with self.assertRaises( Error_bad_token ) as e:
+            self.api.me.get()
+
+
 class Test_chibi_github_me( Test_chibi_github_login ):
     def test_me_should_return_user_data( self ):
         result = self.api.me.get()
@@ -99,8 +108,8 @@ class Test_chibi_github_repo( Test_chibi_github_login ):
 
 class Test_chibi_github_repo_create( Test_chibi_github_login ):
     def test_create_without_data_should_fail( self ):
-        result = self.api.me.repos.create()
-        self.assertFalse( result )
+        with self.assertRaises( HTTPError ):
+            result = self.api.me.repos.create()
 
     def test_create_and_delete_should_work( self ):
         result = self.api.me.repos.create(

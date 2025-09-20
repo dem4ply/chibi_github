@@ -20,7 +20,11 @@ class Parse_url( Schema ):
     url = Github_url()
 
 
-class Get_base( Parse_url ):
+class Parse_status( Schema ):
+    status = fields.Integer( required=False )
+
+
+class Get_base( Parse_url, Parse_status ):
 
     class Meta:
         unknown = INCLUDE
