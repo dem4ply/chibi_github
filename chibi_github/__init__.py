@@ -5,4 +5,4 @@ from chibi_github.chibi_github import Github_api
 __all__ = [ 'Github_api' ]
 __author__ = """dem4ply"""
 __email__ = 'dem4ply@gmail.com'
-__version__ = '0.1.2'
+__version__ = '0.2.0'
